@@ -89,9 +89,9 @@ region_natural VARCHAR(55) NOT NULL,
 );
 
 CREATE TABLE zona_ubigeos(
+id INT IDENTITY(1,1) PRIMARY KEY,
 zona_id INT NOT NULL,
 ubigeo_id INT NOT NULL,
-PRIMARY KEY (zona_id,ubigeo_id),
 FOREIGN KEY (zona_id) REFERENCES zonas(id),
 FOREIGN KEY (ubigeo_id) REFERENCES ubigeos(id)
 );
