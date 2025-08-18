@@ -87,3 +87,11 @@ provincia VARCHAR(155) NOT NULL,
 distrito VARCHAR(155) NOT NULL,
 region_natural VARCHAR(55) NOT NULL,
 );
+
+CREATE TABLE zona_ubigeos(
+zona_id INT NOT NULL,
+ubigeo_id INT NOT NULL,
+PRIMARY KEY (zona_id,ubigeo_id),
+FOREIGN KEY (zona_id) REFERENCES zonas(id),
+FOREIGN KEY (ubigeo_id) REFERENCES ubigeos(id)
+);
