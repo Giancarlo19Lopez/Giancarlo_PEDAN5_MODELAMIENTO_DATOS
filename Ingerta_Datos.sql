@@ -89,3 +89,32 @@ INSERT INTO indicadores (empleado_id, tipo_indicador_id, codigo, nombre, unidad_
 (28, 8, 'IND028', 'Créditos Vencidos', 'Porcentaje', 'Porcentaje de créditos con morosidad'),
 (29, 9, 'IND029', 'Crecimiento Activos Financieros', 'Porcentaje', 'Aumento diario de activos financieros'),
 (30, 10, 'IND030', 'Desempeño Integral Diario', 'Índice', 'Indicador global para medir rendimiento diario');
+
+
+--ubigeos
+INSERT INTO ubigeos (ubigeo, departamento, provincia, distrito, region_natural) VALUES
+('150101', 'LIMA', 'LIMA', 'LIMA', 'Costa'),
+('150102', 'LIMA', 'LIMA', 'ANCON', 'Costa'),
+('150103', 'LIMA', 'LIMA', 'ATE', 'Costa'),
+('150104', 'LIMA', 'LIMA', 'BARRANCO', 'Costa'),
+('150201', 'LIMA', 'HUARAL', 'HUARAL', 'Costa'),
+('040101', 'AREQUIPA', 'AREQUIPA', 'AREQUIPA', 'Sierra'),
+('040102', 'AREQUIPA', 'AREQUIPA', 'CAYMA', 'Sierra'),
+('040103', 'AREQUIPA', 'AREQUIPA', 'CERRO COLORADO', 'Sierra'),
+('040104', 'AREQUIPA', 'AREQUIPA', 'YANAHUARA', 'Sierra'),
+('040201', 'AREQUIPA', 'CAMANÁ', 'CAMANÁ', 'Costa'),
+('130101', 'LA LIBERTAD', 'TRUJILLO', 'TRUJILLO', 'Costa'),
+('130102', 'LA LIBERTAD', 'TRUJILLO', 'EL PORVENIR', 'Costa'),
+('130103', 'LA LIBERTAD', 'TRUJILLO', 'FLORENCIA DE MORA', 'Costa'),
+('130104', 'LA LIBERTAD', 'TRUJILLO', 'HUANCHACO', 'Costa'),
+('130201', 'LA LIBERTAD', 'ASCOPE', 'ASCOPE', 'Costa'),
+('080101', 'CUSCO', 'CUSCO', 'CUSCO', 'Sierra'),
+('080102', 'CUSCO', 'CUSCO', 'SAN SEBASTIAN', 'Sierra'),
+('080103', 'CUSCO', 'CUSCO', 'SAN JERONIMO', 'Sierra'),
+('080104', 'CUSCO', 'CUSCO', 'WANCHAQ', 'Sierra'),
+('080201', 'CUSCO', 'ACOMAYO', 'ACOMAYO', 'Sierra'),
+('200101', 'PIURA', 'PIURA', 'PIURA', 'Costa'),
+('200102', 'PIURA', 'PIURA', 'CASTILLA', 'Costa'),
+('200103', 'PIURA', 'PIURA', 'CATACAOS', 'Costa'),
+('200104', 'PIURA', 'PIURA', 'CURA MORI', 'Costa'),
+('200201', 'PIURA', 'AYABACA', 'AYABACA', 'Sierra');
