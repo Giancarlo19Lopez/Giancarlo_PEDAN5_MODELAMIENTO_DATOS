@@ -78,3 +78,12 @@ diferencia_porcentual DECIMAL(9,2) NOT NULL,
 clasificación VARCHAR(155) NOT NULL,
 CONSTRAINT fk_registro_diario_indicador FOREIGN KEY (registro_diario_indicador_id) REFERENCES registros_indicadores_diarios(id),
 );
+
+CREATE TABLE ubigeos(
+id INT IDENTITY(1,1) PRIMARY KEY,
+ubigeo CHAR(6) UNIQUE NOT NULL,
+departamento VARCHAR(100) NOT NULL,
+provincia VARCHAR(155) NOT NULL,
+distrito VARCHAR(155) NOT NULL,
+region_natural VARCHAR(55) NOT NULL,
+);
