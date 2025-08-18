@@ -91,30 +91,110 @@ INSERT INTO indicadores (empleado_id, tipo_indicador_id, codigo, nombre, unidad_
 (30, 10, 'IND030', 'Desempeño Integral Diario', 'Índice', 'Indicador global para medir rendimiento diario');
 
 
---ubigeos
 INSERT INTO ubigeos (ubigeo, departamento, provincia, distrito, region_natural) VALUES
 ('150101', 'LIMA', 'LIMA', 'LIMA', 'Costa'),
 ('150102', 'LIMA', 'LIMA', 'ANCON', 'Costa'),
 ('150103', 'LIMA', 'LIMA', 'ATE', 'Costa'),
 ('150104', 'LIMA', 'LIMA', 'BARRANCO', 'Costa'),
 ('150201', 'LIMA', 'HUARAL', 'HUARAL', 'Costa'),
+
 ('040101', 'AREQUIPA', 'AREQUIPA', 'AREQUIPA', 'Sierra'),
 ('040102', 'AREQUIPA', 'AREQUIPA', 'CAYMA', 'Sierra'),
 ('040103', 'AREQUIPA', 'AREQUIPA', 'CERRO COLORADO', 'Sierra'),
 ('040104', 'AREQUIPA', 'AREQUIPA', 'YANAHUARA', 'Sierra'),
 ('040201', 'AREQUIPA', 'CAMANÁ', 'CAMANÁ', 'Costa'),
+
 ('130101', 'LA LIBERTAD', 'TRUJILLO', 'TRUJILLO', 'Costa'),
 ('130102', 'LA LIBERTAD', 'TRUJILLO', 'EL PORVENIR', 'Costa'),
 ('130103', 'LA LIBERTAD', 'TRUJILLO', 'FLORENCIA DE MORA', 'Costa'),
 ('130104', 'LA LIBERTAD', 'TRUJILLO', 'HUANCHACO', 'Costa'),
 ('130201', 'LA LIBERTAD', 'ASCOPE', 'ASCOPE', 'Costa'),
+
 ('080101', 'CUSCO', 'CUSCO', 'CUSCO', 'Sierra'),
 ('080102', 'CUSCO', 'CUSCO', 'SAN SEBASTIAN', 'Sierra'),
 ('080103', 'CUSCO', 'CUSCO', 'SAN JERONIMO', 'Sierra'),
 ('080104', 'CUSCO', 'CUSCO', 'WANCHAQ', 'Sierra'),
 ('080201', 'CUSCO', 'ACOMAYO', 'ACOMAYO', 'Sierra'),
+
 ('200101', 'PIURA', 'PIURA', 'PIURA', 'Costa'),
 ('200102', 'PIURA', 'PIURA', 'CASTILLA', 'Costa'),
 ('200103', 'PIURA', 'PIURA', 'CATACAOS', 'Costa'),
 ('200104', 'PIURA', 'PIURA', 'CURA MORI', 'Costa'),
 ('200201', 'PIURA', 'AYABACA', 'AYABACA', 'Sierra');
+
+INSERT INTO zonas (codigo, nombre) VALUES
+('ZN001', 'Zona Norte'),
+('ZS001', 'Zona Sur'),
+('ZC001', 'Zona Centro'),
+('ZO001', 'Zona Oriente'),
+('ZO002', 'Zona Occidente');
+
+
+INSERT INTO sucursales (zona_ubigeo_id, gerente_id, codigo, nombre, email, telefono, coordenada_gps)
+VALUES
+(1, 1, 'SUC001', 'Sucursal Lima Norte', 'norte@empresa.com', '999999991', geography::STPointFromText('POINT(-77.02824 -12.04318)', 4326)),
+(2, 2, 'SUC002', 'Sucursal Arequipa', 'arequipa@empresa.com', '999999992', geography::STPointFromText('POINT(-71.53745 -16.40905)', 4326)),
+(3, 3, 'SUC003', 'Sucursal Cusco', 'cusco@empresa.com', '999999993', geography::STPointFromText('POINT(-71.96746 -13.53195)', 4326)),
+(4, 4, 'SUC004', 'Sucursal Piura', 'piura@empresa.com', '999999994', geography::STPointFromText('POINT(-80.63282 -5.19449)', 4326)),
+(5, 5, 'SUC005', 'Sucursal Puno', 'puno@empresa.com', '999999995', geography::STPointFromText('POINT(-70.02188 -15.84022)', 4326));
+
+select * from registros_indicadores_diarios;
+
+INSERT INTO zona_ubigeos (zona_id, ubigeo_id) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+
+
+--falta este
+INSERT INTO registros_indicadores_diarios (
+    sucursal_id, indicador_id, fecha_reporte, valor_real, valor_meta,
+    create_at, update_at, deleted_ad, create_by, update_by, deleted_by
+) VALUES
+(3, 1, '2025-08-01', 90, 100, GETDATE(), NULL, NULL, 1, NULL, NULL),
+(3, 2, '2025-08-01', 50, 55, GETDATE(), NULL, NULL, 1, NULL, NULL),
+(3, 1, '2025-08-01', 95, 100, GETDATE(), NULL, NULL, 2, NULL, NULL),
+(6, 3, '2025-08-01', 70, 75, GETDATE(), NULL, NULL, 2, NULL, NULL),
+(6, 1, '2025-08-01', 100, 100, GETDATE(), NULL, NULL, 3, NULL, NULL),
+(6, 2, '2025-08-01', 55, 60, GETDATE(), NULL, NULL, 3, NULL, NULL),
+(4, 1, '2025-08-01', 92, 100, GETDATE(), NULL, NULL, 4, NULL, NULL),
+(4, 3, '2025-08-01', 72, 80, GETDATE(), NULL, NULL, 4, NULL, NULL),
+(5, 2, '2025-08-01', 58, 60, GETDATE(), NULL, NULL, 5, NULL, NULL),
+(5, 3, '2025-08-01', 77, 75, GETDATE(), NULL, NULL, 5, NULL, NULL),
+(7, 1, '2025-08-02', 91, 100, GETDATE(), NULL, NULL, 1, NULL, NULL),
+(7, 2, '2025-08-02', 53, 55, GETDATE(), NULL, NULL, 2, NULL, NULL),
+(7, 1, '2025-08-02', 97, 100, GETDATE(), NULL, NULL, 3, NULL, NULL),
+(4, 2, '2025-08-02', 54, 60, GETDATE(), NULL, NULL, 4, NULL, NULL),
+(5, 3, '2025-08-02', 76, 75, GETDATE(), NULL, NULL, 5, NULL, NULL),
+(6, 3, '2025-08-03', 74, 80, GETDATE(), NULL, NULL, 1, NULL, NULL),
+(7, 1, '2025-08-03', 93, 100, GETDATE(), NULL, NULL, 2, NULL, NULL),
+(6, 3, '2025-08-03', 78, 80, GETDATE(), NULL, NULL, 3, NULL, NULL),
+(4, 1, '2025-08-03', 90, 100, GETDATE(), NULL, NULL, 4, NULL, NULL),
+(5, 2, '2025-08-03', 59, 60, GETDATE(), NULL, NULL, 5, NULL, NULL);
+
+
+    INSERT INTO desviaciones_indicadores (
+       registro_diario_indicador_id, diferencia_absoluta, diferencia_porcentual, clasificación
+    ) VALUES
+    (5, 10, 10.0, 'Media'),
+    (6, 5, 9.1, 'Media'),
+    (7, 5, 5.3, 'Baja'),
+    (8, 5, 6.7, 'Baja'),
+    (9, 0, 0.0, 'Sin desviación'),
+    (10, 5, 8.3, 'Baja'),
+    (11, 8, 8.0, 'Baja'),
+    (12, 8, 10.0, 'Media'),
+    (13, 2, 3.3, 'Baja'),
+    (14, -2, -2.7, 'Sin desviación'),
+    (15, 9, 9.0, 'Media'),
+    (16, 2, 3.6, 'Baja'),
+    (17, 3, 3.0, 'Baja'),
+    (18, 6, 10.0, 'Media'),
+    (19, -1, -1.3, 'Sin desviación'),
+    (20, 6, 7.5, 'Baja'),
+    (21, 7, 7.0, 'Baja'),
+    (22, 2, 2.5, 'Baja'),
+    (23, 10, 10.0, 'Media'),
+    (24, 1, 1.7, 'Baja');
