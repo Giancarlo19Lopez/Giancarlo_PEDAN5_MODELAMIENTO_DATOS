@@ -22,3 +22,7 @@
 ###Cubo con SSAS
 
 <img width="946" height="627" alt="image" src="https://github.com/user-attachments/assets/d8c1de72-ad45-4a0a-aee3-5a19161bff12" />
+
+###Exploración DATA
+
+<img width="1232" height="514" alt="image" src="https://github.com/user-attachments/assets/fcf1e470-fc11-49c8-952f-d221f40e8b4a" />
