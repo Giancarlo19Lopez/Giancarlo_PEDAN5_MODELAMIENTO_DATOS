@@ -17,3 +17,8 @@
 ###Flujo corrido con exito
 
 <img width="406" height="353" alt="image" src="https://github.com/user-attachments/assets/dea9324e-dc9a-4c08-a31d-f5aa85d66a3f" />
+
+
+###Cubo con SSAS
+
+<img width="946" height="627" alt="image" src="https://github.com/user-attachments/assets/d8c1de72-ad45-4a0a-aee3-5a19161bff12" />
